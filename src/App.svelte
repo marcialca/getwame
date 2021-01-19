@@ -2,12 +2,16 @@
 	// TODO: i18n
 	// TODO: PWA cappability
 	import countryPhoneCodes from './countryCodes';
-
 	let phoneNumber = '';
 	let selectedCountryCode;
-	let currentUserCountry = 'CR'; //TODO: find user country code
-
+	$: currentUserCountry = 'CR';
 	$: generatedCode = `https://wa.me/${selectedCountryCode}${phoneNumber}`
+
+	fetch('https://extreme-ip-lookup.com/json/')
+	.then( response => response.json())
+	.then(res => {
+		currentUserCountry = res.country.countryCode;
+	});
 
 	async function copyGeneratedCode() {
 		await navigator.clipboard.writeText(generatedCode);
