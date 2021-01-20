@@ -10,7 +10,7 @@
 	fetch('https://extreme-ip-lookup.com/json/')
 	.then( response => response.json())
 	.then(res => {
-		currentUserCountry = res.country.countryCode;
+		currentUserCountry = res.countryCode;
 	});
 
 	async function copyGeneratedCode() {
