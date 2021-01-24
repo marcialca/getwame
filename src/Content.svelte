@@ -2,10 +2,8 @@
 	// TODO: PWA cappability
 	import countryPhoneCodes from './countryCodes';
 	import getUserCountry from './getUserCountry';
-	import initializeI18n from './i18n';
+	// import initialize from './i18n';
 	import { _ } from 'svelte-i18n';
-
-	initializeI18n();
 
 	let phoneNumber = '';
 	let selectedCountryCode;
@@ -14,6 +12,7 @@
 	$: generatedCode = `https://wa.me/${selectedCountryCode}${phoneNumber}`
 
 	currentUserCountry = getUserCountry();
+	// initialize();
 
 	async function copyGeneratedCode() {
 		await navigator.clipboard.writeText(generatedCode);
@@ -22,29 +21,29 @@
 </script>
 
 <main>
-	<h1>{$_('title')}</h1>
-	<p>{$_('intro')}</p>
-	<p class="boldLabel">{$_('instructionsLabel')}:</p>
+	<!-- <h1>${_('pageTitle')}</h1> -->
+	<p>Avoid adding a number to your contacts just to send a message</p>
+	<p class="boldLabel">Instructions:</p>
 	<ul>
-		<li>{$_('instructionOne')}</li>
-		<li>{$_('instructionTwo')}</li>
-		<li>{$_('instructionThree')}</li>
+		<li>Select your country</li>
+		<li>Type in your number</li>
+		<li>Copy or use the generated link!</li>
 	</ul>
 
-	<label class="boldLabel" for="telephone">{$_('selectLabel')}: </label>
+	<label class="boldLabel" for="telephone">Select your country: </label>
 	<select class="select" bind:value={selectedCountryCode} name="countryCode" id="country">
 		{#each countryPhoneCodes as country}
 			<option selected={country.code === currentUserCountry} value={country.dial_code}>{country.name}</option>
 		{/each}
 	</select>
 
-	<label class="boldLabel" for="telephone">{$_('phoneLabel')}: </label>
+	<label class="boldLabel" for="telephone">Telephone Number: </label>
 	<input bind:value={phoneNumber} type="tel" inputmode="tel" name="telephone" placeholder="eg: 8675309">
 
 	<div class="actions-wrap">
-		<a class="sendLink" href={generatedCode}><img src="./images/wa_logo.png" width="60px" height="50px" alt={$_('sendMessage')}>{$_('sendMessage')}</a>
+		<a class="sendLink" href={generatedCode}><img src="./images/wa_logo.png" width="60px" height="50px" alt="Open generated link">Send Message</a>
 		<button class="copyButton" on:click={copyGeneratedCode}>
-			<span>{$_('copy')}</span>
+			<span>Copy URL </span>
 			<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 512 512">
 				<path d="M320 128v-128h-224l-96 96v288h192v128h320v-384h-192zM96 45.255v50.745h-50.745l50.745-50.745zM32 352v-224h96v-96h160v96l-96 96v128h-160zM288 173.255v50.745h-50.745l50.745-50.745zM480 480h-256v-224h96v-96h160v320z"></path>
 				</svg>
@@ -52,14 +51,14 @@
 	</div>
 
 	{#if isNumberCopied}
-		<p class="copiedText">{$_('copied')}!</p>
+		<p class="copiedText">Copied!</p>
 	{/if}
 
-	<p><span class="generatedLabel">{$_('generatedLink')}:</span> <span class="generated">{generatedCode} </span></p>
+	<p><span class="generatedLabel">Generated Link:</span> <span class="generated">{generatedCode} </span></p>
 
 
 	<footer>
-		<p>{$_('builtBy')} <a class="footerAnchor" href="https://marcialcambronero.com">Marcial Cambronero</a></p>
+		<p>Built by <a class="footerAnchor" href="https://marcialcambronero.com">Marcial Cambronero</a></p>
 	</footer>
 </main>
 

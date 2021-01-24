@@ -1,0 +1,15 @@
+{
+  "title": "WhatsApp Message Link Generator",
+  "intro": "Avoid adding a number to your contacts just to send a message",
+  "instructionsLabel": "Instructions",
+  "instructionOne": "Select your country",
+  "instructionTwo": "Type in your number",
+  "instructionThree": "Copy or use the generated link",
+  "selectLabel": "Select your country",
+  "phoneLabel": "Telephone Number",
+  "sendMessage": "Send Message",
+  "copy": "Copy URL",
+  "copied": "Copied",
+  "generatedLink": "Generated Link",
+  "builtBy": "Built by"
+}

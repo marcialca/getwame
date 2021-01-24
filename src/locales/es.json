@@ -1,0 +1,15 @@
+{
+  "title": "Generador de Mensajes para WhatsApp",
+  "intro": "Evite añadir un contacto solo para enviar un mensaje",
+  "instructionsLabel": "Instrucciones",
+  "instructionOne": "Seleccione su país",
+  "instructionTwo": "Escriba el número telefónico",
+  "instructionThree": "Copie o use el link generado",
+  "selectLabel": "Seleccione su país",
+  "phoneLabel": "Número Telefónico",
+  "sendMessage": "Enviar Mensaje",
+  "copy": "Copiar Enlace",
+  "copied": "Copiado",
+  "generatedLink": "Enlace Generado",
+  "builtBy": "Hecho por"
+}
