@@ -1,7 +1,6 @@
 <script>
 	// TODO: PWA cappability
 	import countryPhoneCodes from './countryCodes';
-	import getUserCountry from './getUserCountry';
 	import initializeI18n from './i18n';
 	import { _ } from 'svelte-i18n';
 
@@ -12,8 +11,6 @@
 	$: currentUserCountry = 'CR';
 	$: isNumberCopied = false;
 	$: generatedCode = `https://wa.me/${selectedCountryCode}${phoneNumber}`
-
-	currentUserCountry = getUserCountry();
 
 	async function copyGeneratedCode() {
 		await navigator.clipboard.writeText(generatedCode);
