@@ -1,5 +1,4 @@
 <script>
-	// TODO: PWA cappability
 	import countryPhoneCodes from './countryCodes';
 	import initializeI18n from './i18n';
 	import { _ } from 'svelte-i18n';
@@ -7,10 +6,10 @@
 	initializeI18n();
 
 	let phoneNumber = '';
-	let selectedCountryCode;
+	let selectedCountryCode = '+506';
 	$: currentUserCountry = 'CR';
 	$: isNumberCopied = false;
-	$: generatedCode = `https://wa.me/${selectedCountryCode}${phoneNumber}`
+	$: generatedCode = `https://wa.me/${selectedCountryCode.replace(' ', '')}${phoneNumber.replace('-', '')}`
 
 	async function copyGeneratedCode() {
 		await navigator.clipboard.writeText(generatedCode);
@@ -36,7 +35,7 @@
 	</select>
 
 	<label class="boldLabel" for="telephone">{$_('phoneLabel')}: </label>
-	<input bind:value={phoneNumber} type="tel" inputmode="tel" name="telephone" placeholder="eg: 8675309">
+	<input bind:value={phoneNumber} type="number" inputmode="tel" name="telephone" placeholder="eg: 8675309">
 
 	<div class="actions-wrap">
 		<a class="sendLink" href={generatedCode}><img src="./images/wa_logo.png" width="60px" height="50px" alt={$_('sendMessage')}>{$_('sendMessage')}</a>
