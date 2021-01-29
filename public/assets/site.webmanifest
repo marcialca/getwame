@@ -1,14 +1,16 @@
 {
-    "name": "",
-    "short_name": "",
+    "name": "WhatsApp Message link generator",
+    "short_name": "Get wa.me",
+    "description": "WhatsApp Message link generator",
+    "start_url": "/index.html",
     "icons": [
         {
-            "src": "/android-chrome-192x192.png",
+            "src": "/assets/android-chrome-192x192.png",
             "sizes": "192x192",
             "type": "image/png"
         },
         {
-            "src": "/android-chrome-512x512.png",
+            "src": "/assets/android-chrome-512x512.png",
             "sizes": "512x512",
             "type": "image/png"
         }

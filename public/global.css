@@ -5,14 +5,13 @@ body {
   height: 100%;
 }
 
-
 *:focus {
-  outline: 1px solid #128C7E;
+  outline: 1px solid #128c7e;
 }
 
 body {
   color: #333;
-  background-color: #ECE5DD;
+  background-color: #ece5dd;
   margin: 0;
   box-sizing: border-box;
   font-family: sans-serif;
@@ -51,7 +50,7 @@ button {
   color: black;
   -webkit-appearance: none;
   border: 1px solid #333;
-    background: white;
+  background: white;
   padding: 8px;
   height: 38px;
   box-shadow: none;
@@ -72,16 +71,15 @@ h1 {
 }
 
 a {
-  color: #075E54;
+  color: #075e54;
 }
 
 a:focus {
-  color: #075E54;
+  color: #075e54;
 }
 a:visited {
-  color:#075E54;
+  color: #075e54;
 }
 a:hover {
-  color: #128C7E;
+  color: #128c7e;
 }
-
