@@ -9,7 +9,7 @@
 	let selectedCountryCode = '+506';
 	$: currentUserCountry = 'CR';
 	$: isNumberCopied = false;
-	$: generatedCode = `https://wa.me/${selectedCountryCode.replace(' ', '')}${phoneNumber.replace('-', '')}`
+	$: generatedCode = `https://wa.me/${selectedCountryCode.replace(' ', '')}${`${phoneNumber}`.replace('-', '')}`
 
 	async function copyGeneratedCode() {
 		await navigator.clipboard.writeText(generatedCode);
